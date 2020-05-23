@@ -4,6 +4,7 @@
     "description": "Common Bracket series languages",
     "version": "0.0.1",
     "publisher": "MeowType",
+    "repository": "https://github.com/MeowType/CbStyle",
     "engines": {
         "vscode": "^1.45.0"
     },
