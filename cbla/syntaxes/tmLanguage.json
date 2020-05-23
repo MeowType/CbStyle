@@ -38,7 +38,7 @@
 		"sharp_val": {
 			"name": "string.interpolated.val.cbla",
 			"begin": "(?<=@\\w+\\s*=\\s*)",
-			"end": "(?<!\\\\)(\\r|\\n|\\r\\n)",
+			"end": "(?<!\\\\)(?=(\\r|\\n|\\r\\n))",
 			"patterns": [
 				{
 					"include": "#var"
@@ -215,8 +215,8 @@
 		},
 		"val": {
 			"name": "string.interpolated.val.cbla",
-			"begin": "(?<==\\s*)\\S",
-			"end": "(?<!\\\\)(\\r|\\n|\\r\\n)",
+			"begin": "(?<==\\s*)(?=\\S)",
+			"end": "(?<!\\\\)(?=(\\r|\\n|\\r\\n))",
 			"patterns": [
 				{
 					"include": "#var"
