@@ -1,0 +1,14 @@
+// asd
+/* asd */
+{
+    'a': true
+    "b": "as\"d"
+    c null,
+    d [1.5]
+    e = false
+    f asd
+    g {
+        v [asd]
+    }
+    'h': 'as\'d\uaaaa\u{10FFFF}'
+}

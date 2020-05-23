@@ -1,0 +1,165 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "cbon",
+	"patterns": [
+		{
+			"include": "#value"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"begin": "/\\*\\*(?!/)",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.comment.json"
+						}
+					},
+					"end": "\\*/",
+					"name": "comment.block.documentation.json"
+				},
+				{
+					"begin": "/\\*",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.comment.json"
+						}
+					},
+					"end": "\\*/",
+					"name": "comment.block.json"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.comment.json"
+						}
+					},
+					"match": "(//).*$\\n?",
+					"name": "comment.line.double-slash.js"
+				}
+			]
+		},
+		"constant": {
+			"patterns": [{
+				"name": "constant.language.cbon",
+				"match": "\\b(true|false|null)\\b"
+			}]
+		},
+		"number": {
+			"match": "(0x[\\da-zA-Z_]+)|((([\\d_]+(\\.[\\d_]*)?)|(\\.[\\d_]+))([eE][-+][\\d_]+)?)",
+			"name": "constant.numeric.cbon"
+		},
+		"string": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.cbon",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"include": "#escape"
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single.cbon",
+					"begin": "'",
+					"end": "'",
+					"patterns": [
+						{
+							"include": "#escape"
+						}
+					]
+				},
+				{
+					"name": "string",
+					"match": "[^\\s{}\\[\\],=:\b]+",
+					"patterns": [
+						{
+							"include": "#escape"
+						}
+					]
+				}
+			]
+		},
+		"escape": {
+			"name": "constant.character.escape.cbon",
+			"match": "(\\\\u[\\da-zA-Z]{4})|(\\\\u{[\\da-zA-Z]{1,6}})|(\\\\.)"
+		},
+		"object": {
+			"name": "meta.structure.dictionary.cbon",
+			"begin": "{",
+			"end": "}",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.operator.object.begin.cbon"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "keyword.operator.object.end.cbon"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#comments"
+				},
+				{
+					"match": "[,:=]",
+					"name": "keyword.operator.object.split.cbon"
+				},
+				{
+					"include": "#value"
+				}
+			]
+		},
+		"array": {
+			"name": "meta.structure.array.cbon",
+			"begin": "\\[",
+			"end": "\\]",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.operator.array.begin.cbon"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "keyword.operator.array.end.cbon"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#value"
+				},
+				{
+					"match": ",",
+					"name": "keyword.operator.array.split.cbon"
+				}
+			]
+		},
+		"value": {
+			"patterns": [
+				{
+					"include": "#constant"
+				},
+				{
+					"include": "#number"
+				},
+				{
+					"include": "#comments"
+				},
+				{
+					"include": "#string"
+				},
+				{
+					"include": "#array"
+				},
+				{
+					"include": "#object"
+				}
+			]
+		}
+	},
+	"scopeName": "source.cbon"
+}

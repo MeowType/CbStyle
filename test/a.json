@@ -1,0 +1,15 @@
+{
+    "a": true,
+    "b": "asd",
+    "c": null,
+    "d": [
+        1.5
+    ],
+    "e": false,
+    "f": "asd",
+    "g": {
+        "v": [
+            "asd\uaaaa"
+        ]
+    }
+}

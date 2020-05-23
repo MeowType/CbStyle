@@ -1,0 +1,34 @@
+{
+    "name": "cbstyle",
+    "displayName": "CbStyle",
+    "description": "Common Bracket series languages",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.45.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "cbon",
+            "aliases": ["CBON", "cbon"],
+            "extensions": [".cbon"],
+            "configuration": "./cbon/language-configuration.json"
+        }, {
+            "id": "cbla",
+            "aliases": ["CBLA", "cbla"],
+            "extensions": [".cbla"],
+            "configuration": "./cbla/language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "cbon",
+            "scopeName": "source.cbon",
+            "path": "./cbon/syntaxes/tmLanguage.json"
+        }, {
+            "language": "cbla",
+            "scopeName": "source.cbla",
+            "path": "./cbla/syntaxes/tmLanguage.json"
+        }]
+    }
+}

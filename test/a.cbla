@@ -1,0 +1,36 @@
+#version = 1.0
+
+main {
+    title = Some
+}
+
+asd.foo.bar {
+    some = msg
+}
+
+asd {
+    foo {
+        bar {
+            some = msg
+        }
+    }
+}
+
+a = msg
+b = param {{}}
+c = name {{the_name}}
+d = default {{=123}}
+e = {{val=123}}
+
+f = 'string
+and multi
+line'
+g = escape \n
+h = '{{val=123}} escape \{{}}'
+
+// comments
+/* comments */
+
+#val @some = msg
+some = @some
+some = {{=@some}}

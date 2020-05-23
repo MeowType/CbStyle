@@ -1,0 +1,19 @@
+(!DOCTYPE){html}
+html [
+
+head [
+    meta{charset='utf-8'}
+    title[title]
+]
+
+body [
+    h1 [title]
+    p [some]
+
+    div{class='a'} [
+        div []
+        div '[]' this is not div
+    ]
+]
+
+]
