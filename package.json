@@ -3,6 +3,7 @@
     "displayName": "CbStyle",
     "description": "Common Bracket series languages",
     "version": "0.0.1",
+    "publisher": "MeowType",
     "engines": {
         "vscode": "^1.45.0"
     },
