@@ -16,6 +16,8 @@ asd {
     }
 }
 
+foo.bar.some = 123 msg
+
 a = msg
 b = param {{}}
 c = name {{the_name}}
@@ -26,7 +28,10 @@ f = 'string
 and multi
 line'
 g = escape \n
-h = '{{val=123}} escape \{{}}'
+h = "{{val=123}} escape \{{}}"
+
+line = asd\
+123
 
 // comments
 /* comments */
